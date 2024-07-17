@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:udemy8_bookly/features/home/presentation/widgets/featured_books_listview.dart';
-
+import '../../../../core/utils/styles.dart';
 import 'custome_app_bar.dart';
-import 'custome_book_image.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -13,6 +12,16 @@ class HomeScreenBody extends StatelessWidget {
       children: const[
         CustomAppBar(),
         FeaturedBooksListView(),
+        SizedBox(
+          height: 50,
+        ),
+        Text(
+          'Best Seller',
+          style: Styles.textStyle18,
+        ),
+        SizedBox(
+          height: 20,
+        ),
       ],
     );
   }
