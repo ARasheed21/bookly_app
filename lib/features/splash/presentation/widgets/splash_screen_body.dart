@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:udemy8_bookly/core/utils/asset_path.dart';
-
-import '../../../../constants.dart';
-import '../../../home/presentation/screens/home_screen.dart';
+import '../../../../core/utils/app_router.dart';
 
 class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({super.key});
@@ -35,11 +32,11 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
     Future.delayed(
       const Duration(seconds: 2),
           () {
-        Get.to(() => const HomeScreen(),
-            transition: Transition.fade,
-            duration: kTranstionDuration);
+        // Get.to(() => const HomeScreen(),
+        //     transition: Transition.fade,
+        //     duration: kTranstionDuration);
 
-        //GoRouter.of(context).push(AppRouter.kHomeView);
+        GoRouter.of(context).push(AppRouter.kHomeView);
       },
     );
   }
