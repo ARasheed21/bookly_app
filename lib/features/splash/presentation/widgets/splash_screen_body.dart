@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:udemy8_bookly/core/utils/assets_paths.dart';
+import 'package:udemy8_bookly/core/utils/asset_path.dart';
 
 import '../../../../constants.dart';
 import '../../../home/presentation/screens/home_screen.dart';

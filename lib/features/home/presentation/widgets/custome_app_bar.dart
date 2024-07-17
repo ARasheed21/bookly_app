@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:udemy8_bookly/core/utils/assets_paths.dart';
+import 'package:udemy8_bookly/core/utils/asset_path.dart';
 
 
 class CustomAppBar extends StatelessWidget {
