@@ -1,8 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:udemy8_bookly/features/home/presentation/widgets/custome_book_image.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../core/utils/app_router.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
@@ -12,7 +14,7 @@ class BookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsScreen);
       },
       child: SizedBox(
         height: 125,

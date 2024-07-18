@@ -2,12 +2,13 @@
 
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/presentation/screens/book_details_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/splash/presentation/screens/SplashScreen.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
-  static const kBookDetailsView = '/bookDetailsView';
+  static const kBookDetailsScreen = '/bookDetailsScreen';
   static const kSearchView = '/searchView';
 
   static final router = GoRouter(
@@ -24,10 +25,10 @@ abstract class AppRouter {
         path: kHomeView,
         builder: (context, state) => const HomeScreen(),
       ),
-      // GoRoute(
-      //   path: kBookDetailsView,
-      //   builder: (context, state) => const BookDetailsView(),
-      // ),
+      GoRoute(
+        path: kBookDetailsScreen,
+        builder: (context, state) => const BookDetailsScreen(),
+      ),
     ],
   );
 }
