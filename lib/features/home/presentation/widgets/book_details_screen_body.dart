@@ -4,6 +4,7 @@ import '../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'custom_book_details_app_bar.dart';
 import 'custome_book_image.dart';
+import 'similar_books_section.dart';
 
 class BookDetailsScreenBody extends StatelessWidget {
   const BookDetailsScreenBody({super.key});
@@ -56,6 +57,15 @@ class BookDetailsScreenBody extends StatelessWidget {
                   height: 37,
                 ),
                 const BooksAction(),
+                const Expanded(
+                  child: SizedBox(
+                    height: 50,
+                  ),
+                ),
+                const SimilarBooksSection(),
+                const SizedBox(
+                  height: 40,
+                ),
               ],
             ),
           ),
