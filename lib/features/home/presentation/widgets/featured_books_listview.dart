@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custome_book_image.dart';
+import 'custom_book_image.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({Key? key}) : super(key: key);
