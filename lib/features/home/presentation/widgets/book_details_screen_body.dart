@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy8_bookly/features/home/presentation/widgets/books_action.dart';
 import '../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'custom_book_details_app_bar.dart';
@@ -54,6 +55,7 @@ class BookDetailsScreenBody extends StatelessWidget {
                 const SizedBox(
                   height: 37,
                 ),
+                const BooksAction(),
               ],
             ),
           ),
