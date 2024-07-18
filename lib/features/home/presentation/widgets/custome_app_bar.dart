@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:udemy8_bookly/core/utils/asset_path.dart';
+
+import '../../../../core/utils/app_router.dart';
 
 
 class CustomAppBar extends StatelessWidget {
@@ -20,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
               onPressed: () {
-                //GoRouter.of(context).push(AppRouter.kSearchView);
+                GoRouter.of(context).push(AppRouter.kSearchView);
               },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
