@@ -26,8 +26,8 @@ class HomeRepoImpl extends HomeRepo{
       bookList = await homeRemoteDataSource.fetchFeaturedBooks();
       return right(bookList);
     }catch (e){
-      if(e is DioError){
-        return left(ServerFailure.fromDiorError(e));
+      if(e is DioException){
+        return left(ServerFailure.fromDioException(e));
       }
       return left(ServerFailure(e.toString()));
     }
@@ -44,8 +44,8 @@ class HomeRepoImpl extends HomeRepo{
       bookList = await homeRemoteDataSource.fetchNewestBooks();
       return right(bookList);
     }catch (e){
-      if(e is DioError){
-        return left(ServerFailure.fromDiorError(e));
+      if(e is DioException){
+        return left(ServerFailure.fromDioException(e));
       }
       return left(ServerFailure(e.toString()));
     }
