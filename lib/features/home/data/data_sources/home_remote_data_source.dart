@@ -1,7 +1,10 @@
 import 'package:udemy8_bookly/core/utils/api_service.dart';
 
+import '../../../../constants.dart';
+import '../../../../core/functions/save_books_data.dart';
 import '../../domain/entities/book_entity.dart';
-import '../models/book_model/book_model/book_model.dart';
+import '../models/book_model//book_model.dart';
+
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks();
@@ -17,6 +20,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     var data = await apiService.get(endPoint: 'volumes?Filtering=free-ebooks&q=programming');
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books, kFeaturedBox);
     return books;
   }
 
