@@ -11,7 +11,6 @@ class SplashScreenBody extends StatefulWidget {
 }
 
 class _SplashScreenBodyState extends State<SplashScreenBody> {
-
   @override
   void initState() {
     navigateToHome();
@@ -31,7 +30,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 2),
-          () {
+      () {
         // Get.to(() => const HomeScreen(),
         //     transition: Transition.fade,
         //     duration: kTranstionDuration);

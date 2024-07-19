@@ -33,4 +33,3 @@ class SearchScreenBody extends StatelessWidget {
     );
   }
 }
-

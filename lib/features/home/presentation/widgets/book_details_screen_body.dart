@@ -15,7 +15,7 @@ class BookDetailsScreenBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
-              children:  const [
+              children: const [
                 CustomBookDetailsAppBar(),
                 BookDetailsSection(),
                 Expanded(

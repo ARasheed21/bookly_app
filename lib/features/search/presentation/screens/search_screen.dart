@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../widgets/search_screen_body.dart';
 

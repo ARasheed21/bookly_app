@@ -17,7 +17,7 @@ class HomeScreenBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const[
+              children: const [
                 CustomAppBar(),
                 FeaturedBooksListView(),
                 SizedBox(

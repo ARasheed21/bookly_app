@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:udemy8_bookly/features/home/presentation/widgets/custom_book_image.dart';

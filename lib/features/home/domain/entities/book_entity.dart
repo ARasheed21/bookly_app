@@ -1,5 +1,3 @@
-
-
 //@HiveType(typeId: 0)
 class BookEntity {
   //@HiveField(0)
@@ -17,9 +15,9 @@ class BookEntity {
 
   BookEntity(
       {required this.image,
-        required this.title,
-        required this.authorName,
-        required this.price,
-        required this.rating,
-        required this.bookId});
+      required this.title,
+      required this.authorName,
+      required this.price,
+      required this.rating,
+      required this.bookId});
 }
