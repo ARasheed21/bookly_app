@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:udemy8_bookly/core/errors/failure.dart';
 import 'package:udemy8_bookly/features/home/data/data_sources/home_local_data_source.dart';
 import 'package:udemy8_bookly/features/home/data/data_sources/home_remote_data_source.dart';
@@ -25,7 +26,10 @@ class HomeRepoImpl extends HomeRepo{
       bookList = await homeRemoteDataSource.fetchFeaturedBooks();
       return right(bookList);
     }catch (e){
-      return left(Failure(e.toString()));
+      if(e is DioError){
+        return left(ServerFailure.fromDiorError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
@@ -40,7 +44,10 @@ class HomeRepoImpl extends HomeRepo{
       bookList = await homeRemoteDataSource.fetchNewestBooks();
       return right(bookList);
     }catch (e){
-      return left(Failure(e.toString()));
+      if(e is DioError){
+        return left(ServerFailure.fromDiorError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
