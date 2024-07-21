@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:udemy8_bookly/features/home/domain/entities/book_entity.dart';
 import 'package:udemy8_bookly/features/home/presentation/widgets/custom_book_image.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
@@ -7,7 +8,8 @@ import '../../../../core/utils/app_router.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
+  final BookEntity book;
+  const BookListViewItem({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,8 @@ class BookListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            const CustomBookImage(),
+            CustomBookImage(image: book.image,),
+            const SizedBox(),
             const SizedBox(
               width: 30,
             ),
@@ -30,7 +33,7 @@ class BookListViewItem extends StatelessWidget {
                   Wrap(
                     children: [
                       Text(
-                        'Harry Potter and the Goblet of Fire',
+                        book.title,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Styles.textStyle20.copyWith(
@@ -42,8 +45,8 @@ class BookListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  const Text(
-                    'J.K. Rowling',
+                  Text(
+                    book.authorName ?? 'Author',
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
@@ -52,7 +55,7 @@ class BookListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '19.99 €',
+                        '${book.price} €',
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),

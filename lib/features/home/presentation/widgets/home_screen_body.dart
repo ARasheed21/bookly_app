@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:udemy8_bookly/features/home/presentation/widgets/best_seller_listview.dart';
 import '../../../../core/utils/styles.dart';
+import 'best_seller_listview_bloc_builder.dart';
 import 'book_listview_item.dart';
 import 'custome_app_bar.dart';
 import 'featured_books_listview_bloc_builder.dart';
@@ -26,17 +27,17 @@ class HomeScreenBody extends StatelessWidget {
                   style: Styles.textStyle18,
                 ),
                 SizedBox(height: 20),
-                BookListViewItem(),
               ],
             ),
           ),
           const SliverFillRemaining(
-            child: BestSellerListView(),
+            child: BestSellerListViewBlocBuilder(),
           )
         ],
       ),
     );
   }
 }
+
 
 
