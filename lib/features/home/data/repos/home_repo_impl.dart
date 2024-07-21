@@ -19,7 +19,7 @@ class HomeRepoImpl extends HomeRepo{
   Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks({int pageNumber = 0}) async{
     List<BookEntity> bookList;
     try{
-      bookList = homeLocalDataSource.fetchFeaturedBooks();
+      bookList = homeLocalDataSource.fetchFeaturedBooks(pageNum: pageNumber);
       if(bookList.isNotEmpty){
         return right(bookList);
       }

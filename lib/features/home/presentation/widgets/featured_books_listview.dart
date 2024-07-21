@@ -16,6 +16,7 @@ class FeaturedBooksListView extends StatefulWidget {
 
 class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
   late final ScrollController _scrollController;
+  int nextPage = 1;
 
   @override
   void initState() {
@@ -33,14 +34,14 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
 
   void _scrollListener() {
     if (_scrollController.hasClients) {
+
       double maxScrollExtent = _scrollController.position.maxScrollExtent;
       double currentScrollPosition = _scrollController.position.pixels;
-
       double scrollPercentage = currentScrollPosition / maxScrollExtent;
 
       if (scrollPercentage >= 0.7) {
         log('Scrolled to 70% of the items');
-        BlocProvider.of<FeaturedBooksCubit>(context).fetchFeaturedBook();
+        BlocProvider.of<FeaturedBooksCubit>(context).fetchFeaturedBook(pageNum:nextPage++);
       }
     }
   }
