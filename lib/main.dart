@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:udemy8_bookly/core/utils/functions/setup_service_locator.dart';
+import 'package:udemy8_bookly/core/utils/my_bloc_observer.dart';
 import 'package:udemy8_bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:udemy8_bookly/features/home/domain/use_cases/fetch_featured_books_usecase.dart';
 import 'package:udemy8_bookly/features/home/presentation/cubits/featured_books_cubit/featured_books_cubit.dart';
@@ -18,6 +19,7 @@ void main() async {
   registerServices();
   await Hive.openBox<BookEntity>(kFeaturedBox);
   await Hive.openBox<BookEntity>(kNewestBox);
+  Bloc.observer = MyBlocObserver();
   runApp(const BooklyApp());
 }
 
