@@ -10,7 +10,7 @@ class BestSellerListView extends StatefulWidget {
   const BestSellerListView({super.key, required this.books});
 
   @override
-  _BestSellerListViewState createState() => _BestSellerListViewState();
+  State<StatefulWidget> createState() => _BestSellerListViewState();
 }
 
 class _BestSellerListViewState extends State<BestSellerListView> {

@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/domain/entities/book_entity.dart';
 import '../../features/home/presentation/screens/book_details_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
@@ -26,7 +27,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetailsScreen,
-        builder: (context, state) => const BookDetailsScreen(),
+        builder: (context, state) {
+          final book = state.extra as BookEntity;
+          return BookDetailsScreen(book: book);
+        },
       ),
     ],
   );
