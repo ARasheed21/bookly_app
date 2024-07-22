@@ -8,12 +8,21 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
   final FetchNewestBooksUseCase fetchNewestBooksUseCase;
   NewestBooksCubit(this.fetchNewestBooksUseCase) : super(NewestBooksInitial());
 
-  Future <void> fetchNewestBook ()async{
-    emit(NewestBooksLoading());
-    var result = await fetchNewestBooksUseCase.call();
+  Future <void> fetchNewestBook ({int pageNum = 0})async{
+
+    if(pageNum == 0){
+      emit(NewestBooksLoading());
+    }else{
+      emit(NewestBooksPaginationLoading());
+    }
+    var result = await fetchNewestBooksUseCase.call(pageNum);
 
     result.fold((failure) {
-      emit(NewestBooksFailure(failure.message));
+      if(pageNum == 0){
+        emit(NewestBooksFailure(failure.message));
+      }else{
+        emit(NewestBooksPaginationFailure(failure.message));
+      }
     }, (books){
       emit(NewestBooksSuccess(books));
     });
