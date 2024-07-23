@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:udemy8_bookly/core/errors/failure.dart';
-import 'package:udemy8_bookly/features/search/domain/entities/book_entity.dart';
+import 'package:udemy8_bookly/features/home/domain/entities/book_entity.dart';
 import '../../domain/repos/search_repo.dart';
 import '../data_sources/search_remote_data_source.dart';
 
@@ -16,6 +16,9 @@ class SearchRepoImpl extends SearchRepo{
   @override
   Future<Either<Failure, List<BookEntity>>> fetchSearchedBooks({required String bookTitle}) async{
     try{
+      if (bookTitle.isEmpty){
+        return right([]);
+      }
       List<BookEntity> bookList = await searchRemoteDataSource.fetchSearchedBooks(bookTitle: bookTitle);
       return right(bookList);
     }catch (e){

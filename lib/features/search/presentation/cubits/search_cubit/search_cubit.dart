@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../../../search/domain/entities/book_entity.dart';
+import '../../../../home/domain/entities/book_entity.dart';
 import '../../../domain/repos/search_repo.dart';
 
 part 'search_state.dart';

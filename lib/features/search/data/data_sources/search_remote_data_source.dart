@@ -1,6 +1,7 @@
 import 'package:udemy8_bookly/core/utils/api_service.dart';
-import '../../domain/entities/book_entity.dart';
-import '../models/book_model//book_model.dart';
+import '../../../home/data/models/book_model/book_model.dart';
+import '../../../home/domain/entities/book_entity.dart';
+
 
 
 abstract class SearchRemoteDataSource {

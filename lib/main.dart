@@ -12,6 +12,8 @@ import 'core/utils/app_router.dart';
 import 'features/home/domain/entities/book_entity.dart';
 import 'features/home/domain/use_cases/fetach_newest_books_usecase.dart';
 import 'features/home/presentation/cubits/newest_books_cubit/newest_books_cubit.dart';
+import 'features/search/data/repos/search_repo_impl.dart';
+import 'features/search/presentation/cubits/search_cubit/search_cubit.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -45,6 +47,11 @@ class BooklyApp extends StatelessWidget {
             ),
           )..fetchNewestBook();
         }),
+        BlocProvider(
+          create: (context) => SearchCubit(
+            getIt.get<SearchRepoImpl>(),
+          ),
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
